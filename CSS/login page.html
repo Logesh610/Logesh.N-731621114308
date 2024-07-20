@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Form page</title>
+        <style>
+            .LoginDiv{
+                border: 10px solid red;
+                width: 100%;
+                height: 10%;
+                position: absolute;
+                top:15opx;
+                left: 200px;
+            }
+            .Button{
+                color: brown;
+                font-size: 10px;
+                max-width: 50px;
+                font-weight: 30px;
+                border-radius: 20px;
+                background-color: rgb(28, 182, 66);
+                color: green;
+                cursor: grab;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Login</h2>
+        <form action="/login" method="post">
+            <div class="LoginDiv">
+            <table>
+                <tr>
+                    <td for="username">Username:</td>
+                    <td><input type="text" id="username" name="username"></td>
+                </tr>
+                <tr>
+                    <td><label for="password">Password:</label></td>
+                    <td><input type="password" id="password" name="password"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><center><button type="submit" class="button">Sumbit</button></center></td>
+                </tr>
+
+            </table>
+        </div>
+        </form>
+    </body>
+</html>
