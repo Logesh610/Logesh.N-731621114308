@@ -1,0 +1,14 @@
+<h1>logesh</h1>
+Name : {{name}};
+<br>Age : {{age}};
+<br>E-Mail <input type="text" value="{{email }}" />
+<h1>Property Binding Example</h1>
+<br>Name<input type="text" [value]="name"/>
+<br>Age<input type="text" [value]="age" />
+<br>E-Mail<input type="text" [value]="email" />
+
+<h1>Event Binding Example</h1>
+<button (click)="changeName()">change</button>
+<br>
+<img [src]="imagePath" width="350px" height="350px"/>
+<button (click)="changeImage()">Change Image</button>
