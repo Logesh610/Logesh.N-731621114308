@@ -1,0 +1,9 @@
+.Heading3{
+    border: 2px solid rgb(58, 94, 172);
+    text-align: center;
+    width: 70%;
+    color: rgb(70, 53, 219);
+    background-color: rgb(189, 189, 182);
+    cursor: pointer;
+
+}

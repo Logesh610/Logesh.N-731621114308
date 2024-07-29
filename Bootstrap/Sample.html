@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+    background-color: #878e96;
+    height: 100vh;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+.card {
+    margin-top: 100px;
+}
+
+.card-body {
+    padding: 30px;
+}
+
+.btn-primary {
+    background-color: #1eac59;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+.btn {
+    width: max-content;
+    height: max-content;
+    border: 2px;
+}
+    </style>
+   
+</head>
+<body>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <!-- <p class="card-title text-left md-3">Sign In</p> -->
+                    <p class="text-left md-3"> <a href="">Sign In</a></p>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                           <p class="input-group-addon glyphicon glyphicon-lock"></p>                             
+                            <input type="email" class="form-control" id="email" placeholder="Enter the username (or) email">
+                        </div>
+                    </div>
+                        <div class="form-group">
+                            <!-- <label for="password">Password</label> -->
+                            <input type="password" class="form-control" id="password" placeholder="Password">
+                        </div>
+                       <p> <input type="checkbox" class="btn-success Remember me"><b> Remember me</b></p>
+                        <button type="submit" class="btn btn-primary">Login</button>  <button type="submit" class=" btn btn-success">Login with facebook</button>
+                        <p class="text-left md-3">Don't have an account? <a href="#">Sign Up</a></p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

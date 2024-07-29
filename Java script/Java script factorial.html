@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function factorial(){
+          let a = document.getElementById("n1").value;
+         let fact = 1;
+          for(let index=1;index<=a;index++){
+              fact = fact*index;
+          }
+          document.getElementById("ResultDiv").innerHTML = fact;
+
+        }
+    </script>
+</head>
+<body>
+    Enter first Number <input type="text" id="n1"/>
+    <br>
+    <button onclick="(factorial())">factorial</button>
+
+    <div id="ResultDiv">
+
+    </div>
+</body>
+</html>

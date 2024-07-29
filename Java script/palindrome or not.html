@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <p><h1>Enter the Text</h1><input type="text" id="t1"/></p>
+    <br>
+    <button onclick="palindrome()">Palindrome  Or Not</button>
+      <div id="Result"></div>
+      <script>
+        // function palindrome(){
+        //     let a =document.getElementById("t1").value;
+        //     let result="";
+        //     // let finalll=result;
+        //     let j = a.length - 1;
+        //     let count =0
+        //      for (let i = 0; i < a.length / 2; i++) {
+        //        if (a[i] != a[j]) {
+        //     //    result+= "not"; 
+        //            result = document.write("not");  
+        //                  return false;
+        //                }
+        //                  j--;
+        //            }
+          
+
+                   
+        //             // result+=  "palindrome";
+        //            result = document.write("palindrome"); 
+
+               
+        //             document.getElementById("Result").innerHTML = finalll;
+        //    }
+         function palindrome(){
+
+         
+            let a =document.getElementById("t1").value;
+            let reverseString = a.split("").reverse().join("");
+            let res= document.getElementById("Result");
+
+            console.log('a = ', a);
+            console.log('RS = ', reverseString);
+            
+            if(a===reverseString)
+            res.innerHTML="yes";
+        // document.write("yes");
+               else
+            res.innerHTML="no";
+            // document.write("no");
+
+         }       
+        
+    </script>
+
+</body>
+</html>
