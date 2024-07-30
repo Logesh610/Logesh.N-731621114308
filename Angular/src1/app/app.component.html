@@ -1,0 +1,43 @@
+<!-- <h1>logesh</h1>
+Name : {{name}};
+<br>Age : {{age}};
+<br>E-Mail <input type="text" value="{{email }}" />
+<h1>Property Binding Example</h1>
+<br>Name<input type="text" [value]="name"/>
+<br>Age<input type="text" [value]="age" />
+<br>E-Mail<input type="text" [value]="email" />
+
+<h1>Event Binding Example</h1>
+<button (click)="changeName()">change</button>
+<br>
+<img [src]="imagePath" width="350px" height="350px"/>
+<button (click)="changeImage()">Change Image</button> -->
+
+<!-- <h1>Two Way Data Binding</h1>
+<br>
+Enter Your First Name <input type="text" [(ngModel)]="fname" />
+<br>
+<b>Welcome{{fname}}</b> -->
+
+<h1 [ngClass]="myClass">Structural and Attribute Directive</h1>
+<br>
+<button (click)="changeFlang()">Show or Hide Div</button>
+<br>
+<div *ngIf = "flag" [ngStyle]="myStyle">
+ My Div
+
+ <br>
+ <ul>
+    <li *ngFor="let veca of vehicles" (click)="setSelectedItem(veca)">{{veca}}</li>
+ </ul>
+ <br>
+ <b>You have selected : {{selectedVehicle}}</b>
+ <div [ngSwitch] = "selectedVehicle">
+    <font color = "green" *ngSwitchCase = " 'TwoWheeler'">Bike</font>
+    <font color = "green" *ngSwitchCase = " 'FourWheeler'">car</font>
+    <font color = "green" *ngSwitchDefault>Invalid</font>
+    <br>
+
+
+ </div>
+</div>
