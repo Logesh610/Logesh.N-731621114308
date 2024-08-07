@@ -1,0 +1,95 @@
+SQL> system connect
+SP2-0734: unknown command beginning "system con..." - rest of line ignored.
+SQL> connect system
+Enter password:
+Connected.
+SQL> version
+SP2-0042: unknown command "version" - rest of line ignored.
+************************
+SQL> create table Details(ID number(5),name varchar2(20),salaray number(8));
+
+Table created.
+*****************
+SQL> desc Details
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ID                                                 NUMBER(5)
+ NAME                                               VARCHAR2(20)
+ SALARAY                                            NUMBER(8)
+
+SQL> insert into Details  values(101,'Logesh',10000000);
+
+1 row created.
+*******************
+
+SQL> select * from Details;
+
+        ID NAME                    SALARAY
+---------- -------------------- ----------
+       101 Logesh                 10000000
+******************
+SQL> select Id, Salaray from details;
+
+        ID    SALARAY
+---------- ----------
+       101   10000000
+*****************************
+SQL> select distinct id from Details;
+
+        ID
+----------
+       101
+***********************************
+
+SQL> select distinct * from Details where id =101;
+
+        ID NAME                    SALARAY
+---------- -------------------- ----------
+       101 Logesh                 10000000
+*******************************
+
+SQL> insert into Details  values(1021,'Gokul',10000000);
+
+1 row created.
+
+SQL> insert into Details  values(1021,'Nithaj',10000000);
+
+1 row created.
+
+SQL> insert into Details  values(1031,'Gladson',10000000);
+
+1 row created.
+
+SQL> insert into Details  values(102,'Yeshwanth',10000000);
+
+1 row created.
+************************************
+
+SQL> select * from Details where id<>101;
+
+        ID NAME                    SALARAY
+---------- -------------------- ----------
+      1021 Gokul                  10000000
+      1021 Nithaj                 10000000
+      1031 Gladson                10000000
+       102 Yeshwanth              10000000
+
+*************************************
+SQL> update Details set salaray=70000000 where id=101;
+
+1 row updated.
+
+SQL> update Details set name='Lokesh' where id=101;
+
+1 row updated.
+*************************
+SQL> select * from Details;
+
+        ID NAME                    SALARAY
+---------- -------------------- ----------
+       101 Lokesh                 70000000
+      1021 Gokul                  10000000
+      1021 Nithaj                 10000000
+      1031 Gladson                10000000
+       102 Yeshwanth              10000000
+*******************************************

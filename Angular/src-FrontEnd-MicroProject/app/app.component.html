@@ -1,0 +1,51 @@
+
+<div id="body1">
+    <div id="overall">
+        
+    <div id="heading" [ngClass]="myClass">
+        
+        <h1 id="H2">MOVIE REVIEW SYSTEM</h1>
+        
+    </div>
+<div id="background">
+    <form>
+        <label for="id1" >ID</label>
+        <input type="text" id="id1" required><br><br>
+        <label for="id2">MOVIE NAME</label>
+        <input type="text" id="id2" required><br><br>
+        <label for="id3">RATING</label>
+                <select id="id3" name="rating" required>
+                    <option value="1">★☆☆☆☆</option>
+                    <option value="2">★★☆☆☆</option>
+                    <option value="3">★★★☆☆</option>
+                    <option value="4">★★★★☆</option>
+                    <option value="5">★★★★★</option>
+                </select><br><br>
+        <label for="id4">REVIEW</label>
+        <textarea id="id4" rows="3"></textarea><br><br>
+      <div class="button">
+        <button  type="submit" class="submit-btn "  (click)="ClickMe()" >Submit</button>
+        <button  type="submit" class="Update-btn"   (click)="UpdateMe()">Update</button>
+        <button  type="submit" class="Delete-btn"  (click)="DeleteMe()">Delete</button>
+        <button  type="submit" class="Delete-btn"  (click)="DeleteMe()">Find</button>
+        <button  type="submit" class="Delete-btn"  (click)="DeleteMe()">Find out</button>
+        
+    </div>
+       <div id="message" *ngIf="flag"  [ngStyle]="myStyle" ><p>{{ message }}</p></div>
+       <div id="message" *ngIf="flag1" [ngStyle]="myStyle"><p>{{ message1 }}</p></div>
+       <div id="message" *ngIf="flag2" [ngStyle]="myStyle"><p>{{ message2 }}</p></div>
+  </form>
+</div>
+<div id="Result">
+   
+        <h1 id="h1"><u>Review Data</u></h1>
+        <!-- <button (click)="onClickMe()">Click Me!</button> -->
+       
+
+
+    
+
+</div>
+</div>
+
+</div>
