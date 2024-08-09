@@ -8,14 +8,6 @@ SQL> desc Details
  NAME                                               VARCHAR2(20)
  SALARAY                                            NUMBER(8)
 
-SQL> cls
-SP2-0042: unknown command "cls" - rest of line ignored.
-SQL> select * from Details
-  2
-SQL> select * from Details;
-
-no rows selected
-
 SQL> create table Detail(id number(5),name varchar2(20),salary number(8));
 
 Table created.
@@ -23,12 +15,6 @@ Table created.
 SQL> insert into Detail values(101,'Logesh',1500000);
 
 1 row created.
-
-SQL> insert into Detail values(101,'Gokul',1500000);;
-insert into Detail values(101,'Gokul',1500000);
-                                              *
-ERROR at line 1:
-ORA-00911: invalid character
 
 
 SQL> insert into Detail values(101,'Gokul',1500000);
@@ -51,8 +37,6 @@ SQL> insert into Detail values(105,'Ajith',1500000);
 
 1 row created.
 
-SQL> select * from Detail
-  2
 SQL> select * from Detail;
 
         ID NAME                     SALARY
@@ -66,17 +50,11 @@ SQL> select * from Detail;
 
 6 rows selected.
 
-SQL> commit
-  2
+
 SQL> commit;
 
 Commit complete.
 
-SQL> select * from Details
-  2
-SQL> select * from Details;
-
-no rows selected
 
 SQL> select * from Detail;
 
@@ -107,9 +85,7 @@ SQL> select * from Detail where id not in(101,102,105);
        103 Yeshwanth               1500000
        104 Gladson                 1500000
 
-SQL> select * from Detail where salary between 10000000 and 1000000000;
 
-no rows selected
 
 SQL> select * from Detail where salary between 1000000 and 1000000000;
 
@@ -146,26 +122,6 @@ SQL> select * from Detail where id in (101,103,105) or  salary>145000;
 
 6 rows selected.
 
-SQL> insert into Detail values(106,3000000);
-insert into Detail values(106,3000000)
-            *
-ERROR at line 1:
-ORA-00947: not enough values
-
-
-SQL> insert into Detail values((id,salary)values (106,3000000);
-insert into Detail values((id,salary)values (106,3000000)
-                             *
-ERROR at line 1:
-ORA-00907: missing right parenthesis
-
-
-SQL> insert into Detail ((id,salary)values (106,3000000);
-insert into Detail ((id,salary)values (106,3000000)
-                     *
-ERROR at line 1:
-ORA-00928: missing SELECT keyword
-
 
 SQL> insert into Detail (id,salary)values (106,3000000);
 
@@ -175,9 +131,6 @@ SQL> commit;
 
 Commit complete.
 
-SQL> select 8 from Detail
-  2  select 8 from Detail
-  3
 SQL> select * from Detail;
 
         ID NAME                     SALARY
@@ -211,8 +164,6 @@ SQL> select * from Detail where name is not  null;
 
 6 rows selected.
 
-SQL> commit
-  2
 SQL> commit;
 
 Commit complete.
@@ -260,9 +211,6 @@ SQL> select * from Detail where name like 'A%';
 ---------- -------------------- ----------
        105 Ajith                   1500000
 
-SQL> select * from Detail where name like '__o%';
-
-no rows selected
 
 SQL> select * from Detail where name like '_o%';
 
@@ -270,18 +218,6 @@ SQL> select * from Detail where name like '_o%';
 ---------- -------------------- ----------
        101 Logesh                  1500000
        101 Gokul                   1500000
-
-SQL> select * from Detail where name like '_o__';
-
-no rows selected
-
-SQL> select * from Detail where name like '_o_';
-
-no rows selected
-
-SQL> select * from Detail where name like 't_';
-
-no rows selected
 
 SQL> select * from Detail where name like '%t_';
 
@@ -311,17 +247,6 @@ SQL> select * from Detail where name like '%g%';
 ---------- -------------------- ----------
        101 Logesh                  1500000
 
-SQL> select * from Detail where name like '_g%';
-
-no rows selected
-
-SQL> select * from Detail where name like 'g';
-
-no rows selected
-
-SQL> select * from Detail where name like 'G';
-
-no rows selected
 
 SQL> select * from Detail where name like 'G%';
 
@@ -329,14 +254,6 @@ SQL> select * from Detail where name like 'G%';
 ---------- -------------------- ----------
        101 Gokul                   1500000
        104 Gladson                 1500000
-
-SQL> select * from table
-  2
-SQL> select * from table;
-select * from table
-                  *
-ERROR at line 1:
-ORA-00906: missing left parenthesis
 
 
 SQL> select * from Detail;
@@ -367,22 +284,10 @@ SQL> select * from Detail order by name desc;
 
 7 rows selected.
 
-SQL> alter * from Detail;
-alter * from Detail
-      *
-ERROR at line 1:
-ORA-00940: invalid ALTER command
-
 
 SQL> alter table Detail add doj date;
 
 Table altered.
-
-SQL> select * from table Detail;
-select * from table Detail
-                    *
-ERROR at line 1:
-ORA-00906: missing left parenthesis
 
 
 SQL> select * from Detail;
@@ -456,8 +361,7 @@ SQL>  alter table Detail drop column doj;
 
 Table altered.
 
-SQL> select * from Detail
-  2
+
 SQL> select * from Detail;
 
         ID NAME                     SALARY
@@ -490,36 +394,13 @@ SQL> desc Detail;
  NAME                                               VARCHAR2(20)
  SALARY                                             NUMBER(10)
 
-SQL> alter table Detail modify salary number(5);
-alter table Detail modify salary number(5)
-                          *
-ERROR at line 1:
-ORA-01440: column to be modified must be empty to decrease precision or scale
 
-
-SQL> alter table Detail modify salary number(9);
-alter table Detail modify salary number(9)
-                          *
-ERROR at line 1:
-ORA-01440: column to be modified must be empty to decrease precision or scale
 
 
 SQL> alter table Detail modify salary number(12);
 
 Table altered.
 
-SQL> alter table Detail;
-alter table Detail
-                 *
-ERROR at line 1:
-ORA-02210: no options specified for ALTER TABLE
-
-
-SQL> rename column salary to expensses;
-rename column salary to expensses
-       *
-ERROR at line 1:
-ORA-00903: invalid table name
 
 
 SQL> alter table Detail rename column salary to expenses;
@@ -544,18 +425,6 @@ SQL> rename Detail to Information;
 
 Table renamed.
 
-SQL> select 8 from Detail;
-select 8 from Detail
-              *
-ERROR at line 1:
-ORA-00942: table or view does not exist
-
-
-SQL> select * from Detail;
-select * from Detail
-              *
-ERROR at line 1:
-ORA-00942: table or view does not exist
 
 
 SQL> select * from Information;
@@ -576,19 +445,12 @@ SQL> drop table Information;
 
 Table dropped.
 
-SQL> source * from Information;
-SP2-0734: unknown command beginning "source * f..." - rest of line ignored.
+
 SQL> rollback;
 
 Rollback complete.
 
-SQL> source * from Information;
-SP2-0734: unknown command beginning "source * f..." - rest of line ignored.
-SQL> flashback table Information;
-flashback table Information
-*
-ERROR at line 1:
-ORA-00439: feature not enabled: Flashback Table
+
 
 
 SQL>

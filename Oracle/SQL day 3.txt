@@ -1,0 +1,142 @@
+
+SQL> create table student(reg_no number(5) primary key,stud_name varchar2(20)not null,stud_email varchar2(20) unique,stud_age number(3) check(stud_age>0),stdu_location varchar2(20) default'Karur');
+
+Table created.
+
+SQL> select * from student;
+
+no rows selected
+
+SQL> desc student;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ REG_NO                                    NOT NULL NUMBER(5)
+ STUD_NAME                                 NOT NULL VARCHAR2(20)
+ STUD_EMAIL                                         VARCHAR2(20)
+ STUD_AGE                                           NUMBER(3)
+ STDU_LOCATION                                      VARCHAR2(20)
+
+SQL> insert into student (reg_no ,stud_name,stud_email,stud_age)
+  2  values(101,'valan','logesh@gmail.com',21);
+
+1 row created.
+
+SQL> select * from student;
+
+    REG_NO STUD_NAME            STUD_EMAIL             STUD_AGE
+---------- -------------------- -------------------- ----------
+STDU_LOCATION
+--------------------
+       101 valan                logesh@gmail.com             21
+Karur
+
+
+SQL> insert into student (reg_no ,stud_name,stud_email,stud_age)
+  2  values(102,'lokesh','lokesh@gmail.com',21);
+
+1 row created.
+
+SQL> create table department(dno number(5) primary key,dname varchar2(20));
+
+Table created.
+
+SQL> creat table employee(eid number(5) primary key,ename varchar2(20),esalary number(5), dno number(5),foreign key (dno) references department(dno));
+SP2-0734: unknown command beginning "creat tabl..." - rest of line ignored.
+SQL> creat table employee(eid number(5) primary key,ename varchar2(20),esalary number(5), dno number(5),foreign key (dno) references department(dno));
+SP2-0734: unknown command beginning "creat tabl..." - rest of line ignored.
+SQL>
+SQL> create table employee(eid number(5) primary key,ename varchar2(20),esalary number(5), dno number(5),foreign key (dno) references department(dno));
+
+Table created.
+
+SQL> insert into employee values(101,'Logesh',2000,10);
+insert into employee values(101,'Logesh',2000,10)
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (SYSTEM.SYS_C007003) violated - parent key not
+found
+
+
+SQL> insert into department values(10,'MECH');
+
+1 row created.
+
+SQL> insert into employee values(101,'Logesh',2000,10);
+
+1 row created.
+
+SQL> insert into employee values(102,'Lokesh',2000,10);
+
+1 row created.
+
+SQL> select * from department;
+
+       DNO DNAME
+---------- --------------------
+        10 MECH
+
+SQL> create view myview as select * from employee where dno = 10;
+
+View created.
+
+SQL> select 8 from myview;
+
+         8
+----------
+         8
+         8
+
+SQL> select * from myview;
+
+       EID ENAME                   ESALARY        DNO
+---------- -------------------- ---------- ----------
+       101 Logesh                     2000         10
+       102 Lokesh                     2000         10
+
+SQL> update myview set esalary=5000 in id 101;
+update myview set esalary=5000 in id 101
+                               *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+SQL> update myview set esalary=5000 where id 101;
+update myview set esalary=5000 where id 101
+                                        *
+ERROR at line 1:
+ORA-00920: invalid relational operator
+
+
+SQL> update myview set esalary=5000 where  eid 101;
+update myview set esalary=5000 where  eid 101
+                                          *
+ERROR at line 1:
+ORA-00920: invalid relational operator
+
+
+SQL> update myview set esalary=5000 where  eid=101;
+
+1 row updated.
+
+SQL> select * from myview;
+
+       EID ENAME                   ESALARY        DNO
+---------- -------------------- ---------- ----------
+       101 Logesh                     5000         10
+       102 Lokesh                     2000         10
+
+SQL> select eid as "Employee Id",ename"Employee Naame" from employee;
+
+Employee Id Employee Naame
+----------- --------------------
+        101 Logesh
+        102 Lokesh
+
+SQL> select eid as "Employee Id",ename"சந்தோஷம்" from employee;
+
+Employee Id ????????
+----------- --------------------
+        101 Logesh
+        102 Lokesh
+
+SQL>
