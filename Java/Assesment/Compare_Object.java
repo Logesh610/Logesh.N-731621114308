@@ -1,4 +1,4 @@
-package Assesment;
+// package Assesment;
 import java.util.*;
 import java.lang.*;
 public class Compare_Object {
